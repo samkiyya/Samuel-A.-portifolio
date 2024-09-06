@@ -12,6 +12,12 @@ import messageRouter from "./routes/messageRouter.js";
 import skillRouter from "./routes/skillRouter.js";
 import softwareApplicationRouter from "./routes/softwareApplicationRouter.js";
 import projectRouter from "./routes/projectRouter.js";
+import path from "path";
+import { fileURLToPath } from "url";
+
+//resolving dirname for ES module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -49,6 +55,20 @@ app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/skill", skillRouter);
 app.use("/api/v1/softwareapplication", softwareApplicationRouter);
 app.use("/api/v1/project", projectRouter);
+
+//use the client app
+app.use(express.static(path.join(__dirname, "../client/dist")));
+
+app.use("/admin", express.static(path.join(__dirname, "../dashboard/dist")));
+
+app.get("*", (req, res) => {
+  // Serve the main HTML file for the client and dashboard apps
+  if (req.url.startsWith("/admin")) {
+    res.sendFile(path.join(__dirname, "../dashboard/dist/index.html"));
+  } else {
+    res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+  }
+});
 
 // Connect Database
 connectDB();
