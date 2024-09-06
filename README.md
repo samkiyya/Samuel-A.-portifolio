@@ -1,14 +1,14 @@
 # Samuel A. Portfolio
 
-Welcome to my personal portfolio! This repository showcases my expertise in full-stack development through a comprehensive MERN stack application. Dive into my work to explore a well-structured project that demonstrates both backend and frontend capabilities.
+Welcome to my personal portfolio! This repository showcases my expertise in full-stack development through a comprehensive MERN stack application. Dive into my work to explore a well-structured project that demonstrates both server and client capabilities.
 
 ## 🚀 Overview
 
 This portfolio features a full-stack application built with:
 
-- **Node.js** and **Express** for a robust backend
+- **Node.js** and **Express** for a robust server
 - **MongoDB** for efficient data management
-- **React** and **Redux Toolkit** for dynamic, responsive frontend interfaces
+- **React** and **Redux Toolkit** for dynamic, responsive client interfaces
 - **Tailwind CSS** and **ShadCN** for sleek, modern design
 - **Vite** for fast and optimized development builds
 - **NodeMailer** for email handling
@@ -17,20 +17,20 @@ This portfolio features a full-stack application built with:
 
 The project is structured into three main parts:
 
-- **Backend**: Handles all server-side logic and API endpoints.
-- **Frontend**: Displays the user-facing portfolio.
+- **server**: Handles all server-side logic and API endpoints.
+- **client**: Displays the user-facing portfolio.
 - **Dashboard**: Provides an admin panel for managing the portfolio content.
 
 ## 🛠️ Features
 
-- **Interactive Portfolio**: A modern, responsive frontend to showcase my projects and skills.
+- **Interactive Portfolio**: A modern, responsive client to showcase my projects and skills.
 - **Admin Dashboard**: A separate admin panel for easy content management and updates.
-- **Dynamic Backend**: A well-structured backend to support all application functionalities and data handling.
+- **Dynamic server**: A well-structured server to support all application functionalities and data handling.
 
 ## 📁 Project Structure
 
-- **Backend/**: Contains server-side code, including API routes and database models.
-- **Frontend/**: Includes the main user interface for the portfolio.
+- **server/**: Contains server-side code, including API routes and database models.
+- **client/**: Includes the main user interface for the portfolio.
 - **Dashboard/**: Features the admin panel for managing portfolio content.
 
 ## 🚧 Getting Started
@@ -45,17 +45,17 @@ To get started with the project locally, follow these steps:
 
 2. **Navigate to Each Directory and Install Dependencies**
 
-   For Backend:
+   For server:
 
    ```bash
-   cd Samuel-A.-portfolio/Backend
+   cd Samuel-A.-portfolio/server
    npm install
    ```
 
-   For Frontend:
+   For client:
 
    ```bash
-   cd Samuel-A.-portfolio/Frontend
+   cd Samuel-A.-portfolio/client
    npm install
    ```
 
@@ -68,17 +68,17 @@ To get started with the project locally, follow these steps:
 
 3. **Run the Applications**
 
-   Start the Backend server:
+   Start the server server:
 
    ```bash
-   cd Samuel-A.-portfolio/Backend
+   cd Samuel-A.-portfolio/server
    npm start
    ```
 
-   Start the Frontend:
+   Start the client:
 
    ```bash
-   cd Samuel-A.-portfolio/Frontend
+   cd Samuel-A.-portfolio/client
    npm run dev
    ```
 
@@ -91,12 +91,12 @@ To get started with the project locally, follow these steps:
 
 4. **Build for Production**
 
-   To build the frontend and dashboard for production:
+   To build the client and dashboard for production:
 
-   For Frontend:
+   For client:
 
    ```bash
-   cd Samuel-A.-portfolio/Frontend
+   cd Samuel-A.-portfolio/client
    npm run build
    ```
 
@@ -114,7 +114,7 @@ To get started with the project locally, follow these steps:
 
 ## 📄 Documentation
 
-For more detailed documentation and design decisions, please refer to the respective directories for backend and frontend documentation.
+For more detailed documentation and design decisions, please refer to the respective directories for server and client documentation.
 
 ## 🧑‍💻 Contributing
 

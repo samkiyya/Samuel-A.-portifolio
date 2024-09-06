@@ -37,6 +37,6 @@ Thumbs.db
 *.seed
 
 # Folder-specific
-Backend/node_modules/
-Frontend/node_modules/
+server/node_modules/
+client/node_modules/
 dashboard/node_modules/
