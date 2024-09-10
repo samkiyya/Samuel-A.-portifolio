@@ -69,13 +69,10 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            {loading ? (
+            {!loading ? (
               <SpecialLoadingButton content={"Loggin In"} />
             ) : (
-              <Button
-                onClick={() => handleLogin(email, password)}
-                className="w-full"
-              >
+              <Button onClick={handleLogin} className="w-full">
                 Login
               </Button>
             )}

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const API_URL =
   import.meta.env.NODE_ENV === "development"
     ? "http://localhost:5000/api/v1"
-    : "https://samuel-a-portifolio.onrender.com/api/v1";
+    : "https://backend-smr5.onrender.com/api/v1";
 
 const Portfolio = () => {
   const [viewAll, setViewAll] = useState(false);

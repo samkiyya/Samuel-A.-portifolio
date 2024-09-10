@@ -49,12 +49,9 @@ const UpdateProject = () => {
   useEffect(() => {
     const getProject = async () => {
       await axios
-        .get(
-          `https://samuel-a-portifolio.onrender.com/api/v1/project/get/${id}`,
-          {
-            withCredentials: true,
-          }
-        )
+        .get(`https://backend-smr5.onrender.com/api/v1/project/get/${id}`, {
+          withCredentials: true,
+        })
         .then((res) => {
           setTitle(res.data.project.title);
           setDescription(res.data.project.description);
