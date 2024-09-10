@@ -14,7 +14,11 @@ export const addNewSkill = catchAsyncErrors(async (req, res, next) => {
   }
   const cloudinaryResponse = await cloudinary.uploader.upload(
     svg.tempFilePath,
-    { folder: "PORTFOLIO SKILL IMAGES" }
+    {
+      folder: "PORTFOLIO SKILL IMAGES",
+      public_id: `${svg.name.split(".")[0]}`,
+      resource_type: "image",
+    }
   );
   if (!cloudinaryResponse || cloudinaryResponse.error) {
     console.error(
