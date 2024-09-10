@@ -70,11 +70,11 @@ const Login = () => {
               />
             </div>
             {!loading ? (
-              <SpecialLoadingButton content={"Loggin In"} />
-            ) : (
               <Button onClick={handleLogin} className="w-full">
                 Login
               </Button>
+            ) : (
+              <SpecialLoadingButton content={"Loggin In"} />
             )}
           </div>
         </div>
