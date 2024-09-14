@@ -4,7 +4,7 @@ const messageSchema = new mongoose.Schema({
     type: String,
     minLength: [2, "Name Must Contain At Least 2 Characters!"],
   },
-  email: {
+  senderEmail: {
     type: String,
     required: [true, "Email Required!"],
     unique: true,
