@@ -4,7 +4,7 @@ import { User } from "../models/userSchema.js";
 import ErrorHandler from "../middlewares/error.js";
 import { generateToken } from "../utils/jwtToken.js";
 import crypto from "crypto";
-import { sendEmail } from "../utils/sendEmail.js";
+import { sendMail } from "../utils/sendEmail.js";
 
 export const register = catchAsyncErrors(async (req, res, next) => {
   if (!req.files || Object.keys(req.files).length === 0) {
@@ -223,7 +223,7 @@ export const forgotPassword = catchAsyncErrors(async (req, res, next) => {
   You've not requested this email then, please ignore it.`;
 
   try {
-    await sendEmail({
+    await sendMail({
       email: user.email,
       subject: `Personal Portfolio Dashboard Password Recovery`,
       message,
