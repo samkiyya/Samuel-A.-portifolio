@@ -27,7 +27,8 @@ export const sendMail = async ({
 
     console.log("Email sent successfully");
   } catch (error) {
-    console.error("Error sending email:", error);
+    console.log("Error sending email:", error.message);
+    console.log("Error stack trace:", error.stack);
     throw new Error("Failed to send email");
   }
 };
