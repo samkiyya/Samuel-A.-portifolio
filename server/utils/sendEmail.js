@@ -1,5 +1,5 @@
 import nodeMailer from "nodemailer";
-export const sendEmail = async ({
+export const sendMail = async ({
   email,
   subject,
   message,
