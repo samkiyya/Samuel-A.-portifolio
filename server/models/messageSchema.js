@@ -1,11 +1,5 @@
-import mongoose from "mongoose";
-
 const messageSchema = new mongoose.Schema({
-  senderFirstName: {
-    type: String,
-    minLength: [2, "Name Must Contain At Least 2 Characters!"],
-  },
-  senderLaststName: {
+  senderName: {
     type: String,
     minLength: [2, "Name Must Contain At Least 2 Characters!"],
   },
@@ -24,8 +18,6 @@ const messageSchema = new mongoose.Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
   },
 });
-
-export const Message = mongoose.model("Message", messageSchema);

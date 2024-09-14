@@ -42,13 +42,13 @@ const About = () => {
               excel at problem-solving and also appreciate reading, meeting new
               people, and cooking.
             </p>
-            <p className="tracking-[1px] text-xl">
-              Above all, I am dedicated and persevering. I take pride in
-              delivering high-quality work on time and have the resilience to
-              tackle any challenge, no matter how long it takes.
-            </p>
           </div>
         </div>
+        <p className="tracking-[1px] text-xl">
+          Above all, I am dedicated and persevering. I take pride in delivering
+          high-quality work on time and have the resilience to tackle any
+          challenge, no matter how long it takes.
+        </p>
       </div>
     </div>
   );
