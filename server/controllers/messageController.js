@@ -1,7 +1,7 @@
 import { Message } from "../models/messageSchema.js";
 import ErrorHandler from "../middlewares/error.js";
 import { catchAsyncErrors } from "../middlewares/catchAsyncErrors.js";
-import sendMail from "../utils/sendEmail.js";
+import { sendMail } from "../utils/sendEmail.js";
 
 // Send message and handle mail notification
 export const sendMessage = catchAsyncErrors(async (req, res, next) => {
