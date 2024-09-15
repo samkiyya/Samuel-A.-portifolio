@@ -12,7 +12,8 @@ const About = () => {
             background: "hsl(222.2 84% 4.9%)",
           }}
         >
-          ABOUT <span className="text-tubeLight-effect font-extrabold">ME</span>
+          <span className="text-slate-300">ABOUT</span>{" "}
+          <span className="text-tubeLight-effect font-extrabold">ME</span>
         </h1>
         <span className="absolute w-full h-1 top-7 sm:top-7 md:top-8 lg:top-11 z-[-1] bg-slate-200"></span>
       </div>

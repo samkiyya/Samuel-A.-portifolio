@@ -32,7 +32,7 @@ const Portfolio = () => {
             background: "hsl(222.2 84% 4.9%)",
           }}
         >
-          MY{" "}
+          <span className="text-slate-300">MY</span>{" "}
           <span className="text-tubeLight-effect font-extrabold">
             PORTFOLIO
           </span>

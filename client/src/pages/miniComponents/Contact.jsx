@@ -58,7 +58,7 @@ const Contact = () => {
           tracking-[15px] mx-auto w-fit font-extrabold about-h1"
           style={{ background: "hsl(222.2 84% 4.9%)" }}
         >
-          CONTACT
+          <span className="text-slate-300">CONTACT</span>
           <span className="text-tubeLight-effect font-extrabold">ME</span>
         </h1>
         <span
