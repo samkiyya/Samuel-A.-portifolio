@@ -12,15 +12,17 @@ const API_URL =
 const Portfolio = () => {
   const [viewAll, setViewAll] = useState(false);
   const [projects, setProjects] = useState([]);
+
   useEffect(() => {
     const getMyProjects = async () => {
-      const { data } = await axios.get(` ${API_URL}/project/getall`, {
+      const { data } = await axios.get(`${API_URL}/project/getall`, {
         withCredentials: true,
       });
       setProjects(data.projects);
     };
     getMyProjects();
   }, []);
+
   return (
     <div>
       <div className="relative mb-12">
@@ -52,27 +54,35 @@ const Portfolio = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {viewAll
           ? projects &&
-            projects.map((element) => {
-              return (
-                <Link to={`/project/${element._id}`} key={element._id}>
+            projects.map((element) => (
+              <div className="relative" key={element._id}>
+                <Link to={`/project/${element._id}`}>
                   <img
                     src={element.projectBanner && element.projectBanner.url}
                     alt={element.title}
+                    className="w-full h-auto"
                   />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white text-center">
+                    {element.title}
+                  </div>
                 </Link>
-              );
-            })
+              </div>
+            ))
           : projects &&
-            projects.slice(0, 9).map((element) => {
-              return (
-                <Link to={`/project/${element._id}`} key={element._id}>
+            projects.slice(0, 9).map((element) => (
+              <div className="relative" key={element._id}>
+                <Link to={`/project/${element._id}`}>
                   <img
                     src={element.projectBanner && element.projectBanner.url}
                     alt={element.title}
+                    className="w-full h-auto"
                   />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white text-center">
+                    {element.title}
+                  </div>
                 </Link>
-              );
-            })}
+              </div>
+            ))}
       </div>
       {projects && projects.length > 9 && (
         <div className="w-full text-center my-9">
