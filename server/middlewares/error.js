@@ -1,11 +1,18 @@
-const errorMiddleware = (err, req, res, next) => {
+class ErrorHandler extends Error {
+  constructor(message, statusCode) {
+    super(message);
+    this.statusCode = statusCode;
+  }
+}
+export const errorMiddleware = (err, req, res, next) => {
   err.message = err.message || "Internal Server Error";
   err.statusCode = err.statusCode || 500;
 
   // Handle MongoDB duplicate key error
   if (err.code === 11000) {
-    const message = `Duplicate ${Object.keys(err.keyValue)} Entered`;
-    err = new ErrorHandler(message, 400); // Assign the new ErrorHandler instance to 'err'
+    const field = Object.keys(err.keyValue)[0]; // Get the field that caused the duplicate error
+    const message = `Duplicate value for ${field}: ${err.keyValue[field]}`;
+    err = new ErrorHandler(message, 400);
   }
 
   // Handle invalid JWT error
@@ -38,4 +45,4 @@ const errorMiddleware = (err, req, res, next) => {
     message: errorMessage,
   });
 };
-export default errorMiddleware;
+export default ErrorHandler;

@@ -1,15 +1,9 @@
 import nodeMailer from "nodemailer";
-export const sendMail = async ({
-  from = process.env.SMPT_MAIL,
-  email,
-  subject,
-  message,
-}) => {
+export const sendMail = async (options) => {
   try {
     const transporter = nodeMailer.createTransport({
       host: process.env.MAILTRAP_HOST,
       port: process.env.MAILTRAP_PORT,
-      secure: process.env.MAILTRAP_PORT === "465",
       // service: process.env.SMPT_SERVICE,
       auth: {
         user: process.env.MAILTRAP_USER,
@@ -18,10 +12,10 @@ export const sendMail = async ({
     });
 
     const mailOptions = {
-      from,
-      to: email,
-      subject,
-      text: message,
+      from: process.env.SMPT_MAIL,
+      to: options.email,
+      subject: options.subject,
+      text: options.message,
     };
     await transporter.sendMail(mailOptions);
 

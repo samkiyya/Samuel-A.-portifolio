@@ -4,7 +4,7 @@ import fileUpload from "express-fileupload";
 import cors from "cors";
 import connectDB from "./config/db.js";
 import dotenv from "dotenv";
-import errorMiddleware from "./middlewares/error.js";
+import { errorMiddleware } from "./middlewares/error.js";
 import userRouter from "./routes/userRouter.js";
 import timelineRouter from "./routes/timelineRouter.js";
 import messageRouter from "./routes/messageRouter.js";
