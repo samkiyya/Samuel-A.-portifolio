@@ -4,7 +4,6 @@ export const sendMail = async (options) => {
     const transporter = nodeMailer.createTransport({
       host: process.env.MAILTRAP_HOST,
       port: process.env.MAILTRAP_PORT,
-      // service: process.env.SMPT_SERVICE,
       auth: {
         user: process.env.MAILTRAP_USER,
         pass: process.env.MAILTRAP_PASS,
@@ -17,9 +16,14 @@ export const sendMail = async (options) => {
       subject: options.subject,
       text: options.message,
     };
-    await transporter.sendMail(mailOptions);
-
-    console.log("Email sent successfully");
+    await transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log("Error sending email:", error.message);
+        console.log("Error stack trace:", error.stack);
+        throw new Error("Failed to send email");
+      }
+      console.log("Email sent successfully");
+    });
   } catch (error) {
     console.log("Error sending email:", error.message);
     console.log("Error stack trace:", error.stack);
