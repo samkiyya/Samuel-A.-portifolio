@@ -3,20 +3,11 @@ import ErrorHandler from "../middlewares/error.js";
 import { catchAsyncErrors } from "../middlewares/catchAsyncErrors.js";
 
 export const sendMessage = catchAsyncErrors(async (req, res, next) => {
-  const { senderName, subject, message, senderEmail } = req.body;
-  if (!senderName || !subject || !message || !senderEmail) {
+  const { senderName, subject, message } = req.body;
+  if (!senderName || !subject || !message) {
     return next(new ErrorHandler("Please Fill Full Form!", 400));
   }
-  if (senderEmail === null) {
-    // Check for null explicitly
-    return next(new ErrorHandler("Email cannot be null!", 400));
-  }
-  const data = await Message.create({
-    senderName,
-    subject,
-    message,
-    senderEmail,
-  });
+  const data = await Message.create({ senderName, subject, message });
   res.status(201).json({
     success: true,
     message: "Message Sent",
